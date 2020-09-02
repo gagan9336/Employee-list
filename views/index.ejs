@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employeer Session</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3"><i class="fas fa-campground"></i> Employer Session!!!</h1>
+            <p>
+                View Our Employees From All Over The World.
+            </p>
+            <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#exampleModal">
+                ADD EMPLOYE
+            </button>
+            <hr>
+        </div>
+
+        <hr style="background: white;">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="username" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="age" placeholder="Age">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="tel" name="phone" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <% cred.forEach((comment)=>{ %>
+            <div class="row text-white">
+                <div class="col-sm">
+                    <strong>
+                        Name:-
+                    </strong>
+                    <%=comment.username%>
+                </div>
+                <div class="col-sm">
+                    <strong>ID:-</strong> <%=comment._id%>
+                </div>
+                <div class="col-sm">
+                    <form action="/emp/<%=comment._id%>"><button class="btn btn-danger float-right">More Info</button>
+                    </form>
+                </div>
+            </div>
+            <hr style="background: white;">
+            <%})%>
+        </div>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
